@@ -6,15 +6,12 @@ import { useEffect } from 'react';
 
 const SignInButton = () => {
   const session = useSession();
-  console.log(session.data);
+  // console.log(session.data);
   const router = useRouter();
-  // useEffect(() => {
-     
-  //   if (session.status === 'authenticated') {
-  //     router.push('/signIn')
-  //   }
-    
-  // }, [])
+  
+  if (session.status === 'loading') {
+    return <span className="loading loading-infinity loading-lg"></span>
+  }
 
   return (
     <>
