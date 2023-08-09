@@ -15,6 +15,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('@sira-ui/tailwind'),
+    // require('@sira-ui/tailwind'),
+    require('daisyui'),
   ],
 }

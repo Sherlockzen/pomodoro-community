@@ -29,6 +29,8 @@ channelA.on(
 
 
 const Room = () => {
+  const [msg, setMsg] = useState('')
+  const [user,setUser] = useState('')
 
   const teste = (user: string, msg: string) => {
     channelA.send({
@@ -44,7 +46,11 @@ const Room = () => {
   return (
     <>
       <div className=" bg-emerald-600">You are in the ROOM</div>
-      <button className=" btn outline-black">Send message!</button>
+      <div className=" py-10">
+        <input onChange={ (e) => setUser(e.target.value)} placeholder=" Type your user" type="text" />
+        <input onChange={ (e) => setMsg(e.target.value)} placeholder=" Type your message" type="text" />
+      </div>
+      <button onClick={ () => teste(user, msg)} className=" btn outline-black">Send message!</button>
     </>
   )
 }
